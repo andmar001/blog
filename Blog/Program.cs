@@ -1,7 +1,12 @@
+using Blog.Repositorio;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//Repositories
+builder.Services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
 
 var app = builder.Build();
 
