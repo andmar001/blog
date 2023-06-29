@@ -18,3 +18,5 @@ mover home a la carpeta controller de front
 - cambiar el nombre del controller de home a inicio
 - colocar el area a la que pertenece el controller
 # cambiar el nombre de la carpeta home por inicio y moverlo a la carpeta de front
+# forma de acceder a categorias
+http://localhost:5166/admin/categorias

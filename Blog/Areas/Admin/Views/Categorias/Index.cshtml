@@ -1,5 +1,45 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<Blog.Models.Categoria>
+
 @{
+    ViewData["Title"] = "Lista de Categorías";
+}
+
+<div class="row">
+    <div class="col-9">
+        <h1>Administrador de Categorías</h1>
+    </div>
+    <div class="col-3">
+        <a class="btn btn-primary float-end" asp-action="Crear"><i class="bi bi-plus-square"></i> Agregar Categoría</a>
+    </div>
+</div>
+
+<div class="card bg-light p-3">
+    <table class="table" id="tblCategorias">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Fecha de Creación</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+@*        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.IdCategoria)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.FechaCreacion)</td>
+                    <td>
+                        <a class="btn btn-primary" asp-action="Editar" asp-route-id="@item.IdCategoria">Editar</a>
+                        <a class="btn btn-danger" asp-action="Eliminar" asp-route-id="@item.IdCategoria">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>*@    
+        </table>
+</div>
+
+@section Scripts{
+    <script src="~/js/categorias.js"></script>
 }

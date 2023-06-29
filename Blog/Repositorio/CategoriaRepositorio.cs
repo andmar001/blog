@@ -14,17 +14,17 @@ namespace Blog.Repositorio
         }
         public List<Categoria> GetCategorias()
         {
-            var sql = "SELECT * FROM Categorias";
+            var sql = "SELECT * FROM Categoria";
             return _bd.Query<Categoria>(sql).ToList();
         }
         public Categoria GetCategoria(int idCategoria)
         {
-            var sql = "SELECT * FROM Categorias WHERE IdCategoria = @IdCategoria";
+            var sql = "SELECT * FROM Categoria WHERE IdCategoria = @IdCategoria";
             return _bd.Query<Categoria>(sql, new { IdCategoria = idCategoria }).Single();
         }
         public Categoria CrearCategoria(Categoria categoria)
         {
-            var sql = "INSERT INTO Categorias (Nombre, FechaCreacion) VALUES (@Nombre, @FechaCreacion); SELECT SCOPE_IDENTITY()";
+            var sql = "INSERT INTO Categoria (Nombre, FechaCreacion) VALUES (@Nombre, @FechaCreacion); SELECT SCOPE_IDENTITY()";
             _bd.Execute(sql, new
             {
                 categoria.Nombre,
@@ -40,7 +40,7 @@ namespace Blog.Repositorio
         }
         public void BorrarCategoria(int idCategoria)
         {
-            var sql = "DELETE FROM Categorias WHERE IdCategoria = @IdCategoria";
+            var sql = "DELETE FROM Categoria WHERE IdCategoria = @IdCategoria";
             _bd.Execute(sql, new { IdCategoria = idCategoria });
         }
     }

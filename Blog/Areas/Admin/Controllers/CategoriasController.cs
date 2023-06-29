@@ -16,5 +16,13 @@ namespace Blog.Areas.Admin.Controllers
         {
             return View();
         }
+
+        #region js 
+        [HttpGet]
+        public IActionResult GetCategorias()
+        {
+            return Json(new { data = _repoCategoria.GetCategorias() });
+        }
+        #endregion
     }
 }
