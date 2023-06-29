@@ -1,5 +1,6 @@
 ﻿using Blog.Models;
 using Dapper;
+using Microsoft.AspNetCore.Http.HttpResults;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -42,6 +43,25 @@ namespace Blog.Repositorio
         {
             var sql = "DELETE FROM Categoria WHERE IdCategoria = @IdCategoria";
             _bd.Execute(sql, new { IdCategoria = idCategoria });
+        }
+        public List<Categoria> GetAllStored()
+        {
+            try
+            {
+                var listado = _bd.Query<Categoria>("sp_GetCategorias", commandType: CommandType.StoredProcedure).ToList();
+                if (listado != null)
+                {
+                    return listado;
+                }
+                else
+                {
+                    throw new Exception("No se encontraron registros");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

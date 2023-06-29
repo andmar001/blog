@@ -9,5 +9,6 @@ namespace Blog.Repositorio
         Categoria CrearCategoria(Categoria categoria);
         Categoria ActualizarCategoria(Categoria categoria);
         void BorrarCategoria(int idCategoria);
+        List<Categoria> GetAllStored(); 
     }
 }
