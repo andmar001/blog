@@ -1,7 +1,7 @@
 ﻿var dataTable;
 
 $(document).ready(function () {
-    cargarDataTable();
+    cargarDatatable();
 });
 
 function cargarDatatable() {
@@ -34,7 +34,6 @@ function cargarDatatable() {
         ]
     });
 }
-
 
 function Delete(url) {
     swal({

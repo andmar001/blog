@@ -23,10 +23,12 @@
                 <th>Acciones</th>
             </tr>
         </thead>
-@*        <tbody>
-            @foreach (var item in Model)
+        <tbody>
+            @*carga de datos dinamicos por medio de js *@
+           @* @foreach (var item in Model)
             {
                 <tr>
+
                     <td>@Html.DisplayFor(modelItem => item.IdCategoria)</td>
                     <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
                     <td>@Html.DisplayFor(modelItem => item.FechaCreacion)</td>
@@ -35,9 +37,9 @@
                         <a class="btn btn-danger" asp-action="Eliminar" asp-route-id="@item.IdCategoria">Eliminar</a>
                     </td>
                 </tr>
-            }
-        </tbody>*@    
-        </table>
+            }*@
+        </tbody>    
+     </table>
 </div>
 
 @section Scripts{

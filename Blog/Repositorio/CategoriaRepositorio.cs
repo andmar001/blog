@@ -34,7 +34,7 @@ namespace Blog.Repositorio
         }
         public Categoria ActualizarCategoria(Categoria categoria)
         {
-            var sql = "UPDATE Categorias SET Nombre = @Nombre WHERE IdCategoria = @IdCategoria";
+            var sql = "UPDATE Categoria SET Nombre = @Nombre WHERE IdCategoria = @IdCategoria";
             _bd.Execute(sql, categoria);
             return categoria;
         }
